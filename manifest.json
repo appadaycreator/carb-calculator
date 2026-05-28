@@ -1,8 +1,9 @@
 {
   "name": "Carb Calculator",
   "short_name": "carb-calcula",
-  "start_url": "/",
+  "start_url": "/carb-calculator/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#6366f1"
+  "theme_color": "#6366f1",
+  "scope": "/carb-calculator/"
 }
