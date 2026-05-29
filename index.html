@@ -283,7 +283,7 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
         </div>
     </main>
 
-    <footer style="text-align:center;padding:20px;color:white;font-size:12px;opacity:0.75;margin-top:8px;">
+    <footer style="text-align:center;padding:20px;color:white;font-size:12px;background:#374151;margin-top:8px;">
         <p><a href="https://appadaycreator.github.io/" style="color:white;">AppADayCreator</a>
         | <a href="privacy-policy.html" style="color:white;">プライバシーポリシー</a>
         | <a href="terms.html" style="color:white;">利用規約</a>
@@ -370,6 +370,9 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
       clearError();
 
       const foodKey = document.getElementById('food').value;
+      // 入力値をlocalStorageに保存
+      localStorage.setItem('carb_amount', amount);
+      localStorage.setItem('carb_food', foodKey);
       const food = carbTable[foodKey] || carbTable.rice;
       const carb = Math.round(amount * food.rate / 100 * 10) / 10;
       lastCalc = { name: food.name, amount, carb };
@@ -440,6 +443,11 @@ j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src=
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('amount').addEventListener('keydown', e => { if (e.key === 'Enter') calculate(); });
       document.getElementById('amount').addEventListener('input', clearError);
+      // 前回入力を復元
+      const la = localStorage.getItem('carb_amount');
+      const lf = localStorage.getItem('carb_food');
+      if (la) document.getElementById('amount').value = la;
+      if (lf) { const foodEl = document.getElementById('food'); if (foodEl) foodEl.value = lf; }
     });
     </script>
 </body>
