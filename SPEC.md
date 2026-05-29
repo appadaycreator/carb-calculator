@@ -3,8 +3,8 @@
 ## 概要
 
 **サービス名**: Carb Calculator
-**バージョン**: 1.0.0
-**更新日**: 2026-05-27
+**バージョン**: 1.1.0
+**更新日**: 2026-05-29
 **URL**: https://appadaycreator.com/carb-calculator/
 
 食品名・量から糖質量を計算。ダイエット・糖質制限中の食事管理に活用。登録不要・完全無料でご利用いただけます。
@@ -67,6 +67,17 @@
 ## デプロイ
 
 GitHub Pages（mainブランチ push → 自動デプロイ）
+
+## 変更履歴
+
+### v1.1.0（2026-05-29）
+- **P1**: PWA theme-color を `#7c3aed` → `#6366F1` に統一（index.html・contact.html・privacy-policy.html・terms.html・usage.html）
+- **P1**: manifest.json に icons フィールド追加（PWA インストール対応）
+- **P2**: 食品データベースを 9種 → 33種 に拡充（6カテゴリ別 optgroup 表示）
+- **P2**: 複数食品の食事リスト機能を追加（追加・削除・合計表示・リセット）
+- **P2**: バリデーションを `alert()` からインラインエラー表示に変更
+- **P3**: 糖質量ゲージ（プログレスバー・色分け）を計算結果に追加
+- **P3**: `<meta name="twitter:title">` を追加
 
 ## ライセンス
 
