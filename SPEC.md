@@ -70,6 +70,24 @@ GitHub Pages（mainブランチ push → 自動デプロイ）
 
 ## 変更履歴
 
+### v1.3.0（2026-06-10）
+- **P1**: M4 グラフ・ビジュアライゼーション - Chart.js で単品計算結果を横棒グラフで可視化（1食目安40g との比較表示）
+- **P1**: M8 ツールチップ・入力ガイダンス - 「食品の種類」「量（グラム）」ラベルに「?」ヘルプアイコンと説明テキスト追加
+- **P1**: M10 印刷・結果エクスポート - 3つの新機能を追加
+  - 🖨️ 印刷する：window.print() で計算結果と食事リストを紙出力
+  - 📋 結果をコピー：navigator.clipboard で結果をテキスト形式でコピー
+  - 📥 CSVダウンロード：食事リスト全体を CSV 形式（日付付き）でダウンロード
+- **P1**: トースト通知 - 各操作（コピー・ダウンロード）時に「成功しました」メッセージを画面右下に2秒表示
+
+### v1.2.1（2026-06-06）
+- **P1**: PWA theme-color にメディアクエリ対応（index.html を contact.html 等と統一）
+- **P1**: color-scheme メタタグを index.html に追加（light dark対応）
+
+### v1.2.0（2026-06-04）
+- **P1**: PWA theme-color にメディアクエリ対応（ライト/ダーク各色）
+- **P1**: color-scheme メタタグをすべてのHTMLに追加（light dark対応）
+- **P1**: manifest.json に color_scheme フィールド追加
+
 ### v1.1.0（2026-05-29）
 - **P1**: PWA theme-color を `#7c3aed` → `#6366F1` に統一（index.html・contact.html・privacy-policy.html・terms.html・usage.html）
 - **P1**: manifest.json に icons フィールド追加（PWA インストール対応）
