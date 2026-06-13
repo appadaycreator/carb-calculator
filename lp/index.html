@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-TXQGZRF9");</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖質・カーボ量を無料で瞬時に計算【食品名で即検索】| カーボ計算</title>
+<meta name="description" content="食品名とグラム数を入力するだけで糖質量を即計算。糖質制限・ダイエット中の食事管理に最適。1日の目安量比較・食事記録・CSV出力対応。登録不要・完全無料。">
+<link rel="canonical" href="https://appadaycreator.com/carb-calculator/lp/">
+<meta property="og:title" content="糖質・カーボ量を無料で瞬時に計算【食品名で即検索】">
+<meta property="og:description" content="食品名とグラム数を入力するだけで糖質量を即計算。糖質制限・ダイエット中の食事管理に最適。登録不要・完全無料。">
+<meta property="og:url" content="https://appadaycreator.com/carb-calculator/lp/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://appadaycreator.com/assets/ogp-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥗</text></svg>">
+<!-- AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8427583028015858" crossorigin="anonymous"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green:#10B981;--green-dark:#059669;--green-light:#D1FAE5;--green-bg:#ECFDF5;
+  --amber:#F59E0B;--amber-dark:#D97706;
+  --text:#1F2937;--text-light:#6B7280;--bg:#F9FAFB;
+}
+body{font-family:'Noto Sans JP','Hiragino Kaku Gothic Pro',sans-serif;color:var(--text);line-height:1.6;}
+
+/* ── HEADER ── */
+.lp-header{background:#fff;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;box-shadow:0 1px 6px rgba(0,0,0,.08);}
+.lp-logo{display:flex;align-items:center;gap:8px;font-size:18px;font-weight:800;color:var(--green);text-decoration:none;}
+.lp-logo-icon{width:34px;height:34px;background:var(--green);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;}
+.lp-nav{display:flex;gap:24px;}
+.lp-nav a{color:#4B5563;text-decoration:none;font-size:14px;font-weight:500;}
+.lp-nav a:hover{color:var(--green);}
+.btn-amber{background:var(--amber);color:#fff;padding:10px 22px;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+.btn-amber:hover{background:var(--amber-dark);}
+.btn-green-lg{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:16px 40px;border-radius:50px;font-weight:700;font-size:17px;text-decoration:none;box-shadow:0 6px 20px rgba(16,185,129,.35);transition:all .2s;}
+.btn-green-lg:hover{background:var(--green-dark);transform:translateY(-2px);}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#F0FDF4 0%,#ECFDF5 60%,#D1FAE5 100%);padding:64px 40px;}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--green);color:#fff;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px;}
+.hero h1{font-size:36px;font-weight:800;line-height:1.45;margin-bottom:14px;}
+.hero h1 .hl{color:var(--green);}
+.hero-desc{font-size:15px;color:var(--text-light);margin-bottom:20px;line-height:1.9;}
+.hero-checks{display:flex;gap:20px;margin-bottom:32px;flex-wrap:wrap;}
+.hero-check{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--text);}
+.hero-check svg{color:var(--green);}
+/* App preview */
+.app-preview{background:#fff;border-radius:20px;box-shadow:0 12px 48px rgba(0,0,0,.12);padding:20px;max-width:400px;}
+.ap-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #F3F4F6;}
+.ap-title{font-size:13px;font-weight:700;color:#374151;}
+.ap-sub{font-size:12px;color:var(--green);font-weight:600;}
+.ap-gauge-row{display:flex;align-items:center;gap:20px;margin-bottom:16px;}
+.ap-ring{width:100px;height:100px;flex-shrink:0;}
+.ap-stats{flex:1;}
+.ap-stat{display:flex;justify-content:space-between;margin-bottom:7px;font-size:13px;}
+.ap-stat-label{color:#9CA3AF;}
+.ap-stat-value{font-weight:700;color:var(--green);}
+.ap-stat-value.warn{color:var(--amber);}
+.ap-foods{display:flex;flex-direction:column;gap:5px;}
+.ap-food{display:flex;justify-content:space-between;align-items:center;padding:7px 10px;border-radius:8px;background:#F9FAFB;font-size:12px;}
+.ap-food-name{color:#374151;}
+.ap-food-carb{font-weight:700;color:var(--green);}
+.ap-total{margin-top:10px;background:var(--green-bg);border-radius:8px;padding:8px 12px;text-align:center;font-size:13px;font-weight:700;color:var(--green);}
+
+/* ── SECTION COMMON ── */
+.section-tag{text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:8px;}
+.section-title{text-align:center;font-size:28px;font-weight:800;margin-bottom:12px;}
+.section-sub{text-align:center;font-size:15px;color:var(--text-light);margin-bottom:40px;line-height:1.8;}
+.section-inner{max-width:1100px;margin:0 auto;}
+
+/* ── PAIN POINTS ── */
+.pain-section{padding:72px 40px;background:#fff;}
+.pain-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.pain-card{background:var(--bg);border-radius:16px;padding:28px 22px;text-align:center;border:1px solid #E5E7EB;}
+.pain-avatar{font-size:52px;margin-bottom:16px;line-height:1;}
+.pain-title{font-size:16px;font-weight:700;margin-bottom:10px;line-height:1.5;}
+.pain-desc{font-size:13px;color:var(--text-light);line-height:1.8;}
+
+/* ── FEATURES ── */
+.features-section{padding:72px 40px;background:var(--bg);}
+.features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:0;}
+.feature-card{background:#fff;border-radius:14px;padding:22px 24px;display:flex;align-items:flex-start;gap:16px;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.feature-icon{width:52px;height:52px;background:var(--green-light);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:26px;}
+.feature-text h3{font-size:15px;font-weight:700;margin-bottom:5px;}
+.feature-text p{font-size:13px;color:var(--text-light);line-height:1.75;}
+
+/* ── STEPS ── */
+.steps-section{padding:72px 40px;background:#fff;}
+.steps-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:0;}
+.step-item{text-align:center;flex:1;max-width:220px;}
+.step-icon-wrap{width:90px;height:90px;background:var(--green-light);border-radius:50%;margin:0 auto 16px;display:flex;align-items:center;justify-content:center;font-size:40px;}
+.step-num{font-size:12px;font-weight:700;color:var(--green);letter-spacing:1px;margin-bottom:8px;}
+.step-title{font-size:17px;font-weight:700;margin-bottom:6px;}
+.step-desc{font-size:13px;color:var(--text-light);line-height:1.7;}
+.step-arrow{font-size:32px;color:#D1D5DB;margin:0 12px;flex-shrink:0;margin-bottom:32px;}
+
+/* ── GAUGE DEMO ── */
+.gauge-demo-section{padding:72px 40px;background:var(--bg);}
+.gauge-demo-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.gauge-demo-card{background:#fff;border-radius:16px;padding:28px 22px;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.gauge-demo-ring{width:90px;height:90px;margin:0 auto 14px;}
+.gauge-label-text{font-size:17px;font-weight:800;margin-bottom:8px;}
+.gauge-label-text.over{color:#EF4444;}
+.gauge-label-text.ok{color:var(--green);}
+.gauge-label-text.low{color:#3B82F6;}
+.gauge-demo-desc{font-size:13px;color:var(--text-light);line-height:1.75;}
+
+/* ── WEEK GRAPH ── */
+.week-section{padding:72px 40px;background:#fff;}
+.week-mock{background:var(--bg);border-radius:16px;padding:24px;margin-top:0;}
+.week-mock-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.week-bars{display:flex;align-items:flex-end;gap:10px;height:130px;}
+.week-bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;}
+.week-bar-el{width:100%;border-radius:5px 5px 0 0;transition:height .3s;}
+.week-bar-day{font-size:11px;color:#9CA3AF;}
+.week-legend{display:flex;gap:20px;margin-top:12px;justify-content:center;}
+.week-legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:#6B7280;}
+.week-legend-dot{width:12px;height:12px;border-radius:3px;}
+
+/* ── SUPPORT (GREEN BG) ── */
+.support-section{padding:72px 40px;background:var(--green);}
+.support-section .section-tag{color:rgba(255,255,255,.7);}
+.support-section .section-title{color:#fff;}
+.support-section .section-sub{color:rgba(255,255,255,.85);}
+.support-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.support-card{background:rgba(255,255,255,.15);border-radius:14px;padding:24px 20px;backdrop-filter:blur(4px);}
+.support-card-icon{font-size:32px;margin-bottom:12px;}
+.support-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
+.support-card p{font-size:13px;color:rgba(255,255,255,.85);line-height:1.75;}
+
+/* ── FAQ ── */
+.faq-section{padding:72px 40px;background:var(--bg);}
+.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+.faq-item{background:#fff;border-radius:12px;padding:22px 24px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.faq-q{font-weight:700;margin-bottom:8px;display:flex;gap:8px;}
+.faq-q-mark{color:var(--green);font-size:16px;}
+.faq-a{font-size:14px;color:var(--text-light);line-height:1.8;padding-left:24px;}
+
+/* ── CTA BANNER ── */
+.cta-section{padding:88px 40px;background:linear-gradient(135deg,#065F46 0%,#10B981 100%);text-align:center;color:#fff;}
+.cta-section h2{font-size:30px;font-weight:800;margin-bottom:12px;}
+.cta-section p{font-size:15px;opacity:.9;margin-bottom:36px;line-height:1.8;}
+.cta-badges{display:flex;justify-content:center;gap:28px;margin-top:24px;}
+.cta-badge{display:flex;align-items:center;gap:6px;font-size:14px;opacity:.9;}
+
+/* ── FOOTER ── */
+.lp-footer{background:#1F2937;color:#9CA3AF;text-align:center;padding:28px 24px;font-size:12px;}
+.lp-footer a{color:#9CA3AF;text-decoration:none;}
+.lp-footer a:hover{color:#fff;}
+.lp-footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:10px;flex-wrap:wrap;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .pain-cards{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:1fr;}
+  .gauge-demo-cards{grid-template-columns:1fr;}
+  .support-cards{grid-template-columns:1fr;}
+  .steps-flow{flex-direction:column;gap:16px;}
+  .step-arrow{transform:rotate(90deg);margin:0;}
+  .hero h1{font-size:26px;}
+  .section-title{font-size:22px;}
+  .hero{padding:40px 20px;}
+  .pain-section,.features-section,.steps-section,.gauge-demo-section,.week-section,.support-section,.faq-section,.cta-section{padding:48px 20px;}
+  .lp-nav{display:none;}
+  .btn-green-lg{padding:14px 28px;font-size:15px;}
+}
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TXQGZRF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- HEADER -->
+<header class="lp-header">
+  <a href="/carb-calculator/lp/" class="lp-logo">
+    <div class="lp-logo-icon">🥗</div>
+    カーボ計算
+  </a>
+  <nav class="lp-nav">
+    <a href="#features">機能紹介</a>
+    <a href="#steps">使い方</a>
+    <a href="#support">糖質制限サイト</a>
+    <a href="#faq">よくある質問</a>
+  </nav>
+  <a href="/carb-calculator/" class="btn-amber">今すぐ計算する</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        登録不要・完全無料
+      </div>
+      <h1>食品名を検索して<br>グラム数を入力するだけ！<br><span class="hl">糖質・カーボ量を</span><br>無料で瞬時に計算</h1>
+      <p class="hero-desc">ダイエット・糖質制限の食事管理に。食品名から糖質量を瞬時に検索し、<br>毎日の食事を記録して健康的な食生活をサポートします。</p>
+      <div class="hero-checks">
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          登録不要
+        </div>
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          完全無料
+        </div>
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          スマホ・PC対応
+        </div>
+      </div>
+      <a href="/carb-calculator/" class="btn-green-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        今すぐ計算する
+      </a>
+    </div>
+    <div class="app-preview">
+      <div class="ap-header">
+        <span class="ap-title">🥗 糖質・カーボ量計算ツール</span>
+        <span class="ap-sub">目標: 70g/日</span>
+      </div>
+      <div class="ap-gauge-row">
+        <div class="ap-ring">
+          <svg viewBox="0 0 100 100" width="100" height="100">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#E5E7EB" stroke-width="12"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#10B981" stroke-width="12"
+              stroke-dasharray="195 265" stroke-linecap="round" transform="rotate(-90 50 50)"/>
+            <text x="50" y="45" text-anchor="middle" font-size="20" font-weight="800" fill="#1F2937">86</text>
+            <text x="50" y="59" text-anchor="middle" font-size="11" fill="#6B7280">g / 70g</text>
+          </svg>
+        </div>
+        <div class="ap-stats">
+          <div class="ap-stat"><span class="ap-stat-label">今日の糖質</span><span class="ap-stat-value">86.0g</span></div>
+          <div class="ap-stat"><span class="ap-stat-label">目標まで</span><span class="ap-stat-value warn">+16g</span></div>
+          <div class="ap-stat"><span class="ap-stat-label">記録数</span><span class="ap-stat-value">3品</span></div>
+        </div>
+      </div>
+      <div class="ap-foods">
+        <div class="ap-food"><span class="ap-food-name">ご飯（白米）150g</span><span class="ap-food-carb">55.2g</span></div>
+        <div class="ap-food"><span class="ap-food-name">バナナ 100g</span><span class="ap-food-carb">22.5g</span></div>
+        <div class="ap-food"><span class="ap-food-name">豆腐（木綿）100g</span><span class="ap-food-carb">1.5g</span></div>
+      </div>
+      <div class="ap-total">📋 食事合計: 79.2g / 目標 70g</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section" id="problems">
+  <div class="section-inner">
+    <p class="section-tag">PROBLEM</p>
+    <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+    <p class="section-sub">カーボ計算で、これをすべて解決します！</p>
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-avatar">👩‍💼</div>
+        <p class="pain-title">「食事の糖質量が<br>どのくらいか分からない」</p>
+        <p class="pain-desc">ダイエット中でも何を食べていいか分からず、なんとなくで食事を続けてしまう。糖質の多い食品と少ない食品の区別がつかない。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-avatar">👨‍💻</div>
+        <p class="pain-title">「記録が面倒で<br>続かない」</p>
+        <p class="pain-desc">アプリにログインや登録が必要だったり、操作が複雑で気づけば使わなくなってしまう。もっと手軽に使えるツールが欲しい。</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-avatar">👴</div>
+        <p class="pain-title">「目標値との比較が<br>視覚的にできない」</p>
+        <p class="pain-desc">数字だけでは今日の食事が良かったのか悪かったのか直感的に判断できない。ゲージやグラフで一目で把握したい。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="features">
+  <div class="section-inner">
+    <p class="section-tag">SOLUTION</p>
+    <h2 class="section-title">カーボ計算で、これをすべて解決します！</h2>
+    <p class="section-sub">カーボ計算は、これらすべての問題を解決する機能を備えています</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <div class="feature-text">
+          <h3>1日の目標を自動算出</h3>
+          <p>体重・活動量から1日の糖質摂取目安を自動計算。あなた専用の目標値を設定してパーソナライズされた管理が可能です。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <div class="feature-text">
+          <h3>食品検索でGI値・GL値も確認</h3>
+          <p>食品名で素早く検索。糖質量だけでなくGI値・GL値も同時表示。血糖値管理まで対応した日本唯一の計算ツールです。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <div class="feature-text">
+          <h3>週間推移グラフで習慣化</h3>
+          <p>1週間の糖質量の推移をグラフ表示。リピート利用を促進し、健康習慣の定着をサポートします。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📋</div>
+        <div class="feature-text">
+          <h3>食事メモ＋CSVエクスポート</h3>
+          <p>記録した食事をメモと一緒に保存。CSVでダウンロードして自由に分析・管理できる「記録→振り返り」完結ツールです。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌈</div>
+        <div class="feature-text">
+          <h3>糖質制限レベル別の目安ライン</h3>
+          <p>ゆるい・標準・厳格の3段階で目安ラインを表示。日本唯一の糖質制限レベル別軸設定で、あなたのペースに合った管理が可能。</p>
+        </div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <div class="feature-text">
+          <h3>完全プライバシー保護・無料</h3>
+          <p>入力データはすべてブラウザ内で処理。サーバーへの送信は一切なく、登録不要・完全無料でご利用いただけます。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps-section" id="steps">
+  <div class="section-inner">
+    <p class="section-tag">HOW TO USE</p>
+    <h2 class="section-title">使い方はかんたん3ステップ</h2>
+    <p class="section-sub">食品名を検索するだけ。3ステップで糖質管理が始まります</p>
+    <div class="steps-flow">
+      <div class="step-item">
+        <div class="step-icon-wrap">🔍</div>
+        <div class="step-num">STEP 1</div>
+        <div class="step-title">食品を検索</div>
+        <div class="step-desc">食品名を入力して<br>素早く候補を表示</div>
+      </div>
+      <div class="step-arrow">›</div>
+      <div class="step-item">
+        <div class="step-icon-wrap">⚖️</div>
+        <div class="step-num">STEP 2</div>
+        <div class="step-title">グラム入力</div>
+        <div class="step-desc">食べた量をグラムで<br>入力するだけ</div>
+      </div>
+      <div class="step-arrow">›</div>
+      <div class="step-item">
+        <div class="step-icon-wrap">📊</div>
+        <div class="step-num">STEP 3</div>
+        <div class="step-title">計算・記録</div>
+        <div class="step-desc">糖質量を確認して<br>食事リストに追加</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GAUGE DEMO -->
+<section class="gauge-demo-section" id="gauge">
+  <div class="section-inner">
+    <p class="section-tag">VISUAL GAUGE</p>
+    <h2 class="section-title">ひと目でわかる！目標との対比</h2>
+    <p class="section-sub">糖質制限レベル（ゆるい/標準/厳格）別の目安ラインを色分けで直感的に表示</p>
+    <div class="gauge-demo-cards">
+      <div class="gauge-demo-card">
+        <div class="gauge-demo-ring">
+          <svg viewBox="0 0 90 90" width="90" height="90">
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#FEE2E2" stroke-width="11"/>
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#EF4444" stroke-width="11"
+              stroke-dasharray="200 232" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+            <text x="45" y="49" text-anchor="middle" font-size="14" font-weight="800" fill="#EF4444">過多</text>
+          </svg>
+        </div>
+        <p class="gauge-label-text over">⚠️ 過多</p>
+        <p class="gauge-demo-desc">目標値を大幅に超過。赤色のゲージで一目で確認。低糖質食品への切り替えを提案します。</p>
+      </div>
+      <div class="gauge-demo-card">
+        <div class="gauge-demo-ring">
+          <svg viewBox="0 0 90 90" width="90" height="90">
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#D1FAE5" stroke-width="11"/>
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#10B981" stroke-width="11"
+              stroke-dasharray="140 232" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+            <text x="45" y="49" text-anchor="middle" font-size="14" font-weight="800" fill="#10B981">適正</text>
+          </svg>
+        </div>
+        <p class="gauge-label-text ok">✅ 適正</p>
+        <p class="gauge-demo-desc">目標範囲内。緑色のゲージで良好な状態を確認。このペースを維持しましょう。</p>
+      </div>
+      <div class="gauge-demo-card">
+        <div class="gauge-demo-ring">
+          <svg viewBox="0 0 90 90" width="90" height="90">
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#DBEAFE" stroke-width="11"/>
+            <circle cx="45" cy="45" r="37" fill="none" stroke="#3B82F6" stroke-width="11"
+              stroke-dasharray="70 232" stroke-linecap="round" transform="rotate(-90 45 45)"/>
+            <text x="45" y="49" text-anchor="middle" font-size="14" font-weight="800" fill="#3B82F6">不足</text>
+          </svg>
+        </div>
+        <p class="gauge-label-text low">💙 不足</p>
+        <p class="gauge-demo-desc">目標より少なめ。青色のゲージで摂取不足を確認。必要な栄養素を確保しましょう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEK GRAPH -->
+<section class="week-section" id="week">
+  <div class="section-inner">
+    <p class="section-tag">WEEKLY TREND</p>
+    <h2 class="section-title">週間推移グラフで習慣を見える化</h2>
+    <p class="section-sub">1週間の糖質量推移を記録して改善ポイントを把握。リピート利用で習慣が身につきます</p>
+    <div class="week-mock">
+      <div class="week-mock-header">
+        <span style="font-size:14px;font-weight:700;color:#374151;">今週の糖質量推移</span>
+        <span style="font-size:13px;color:#10B981;font-weight:600;">目標ライン: 130g</span>
+      </div>
+      <div class="week-bars">
+        <div class="week-bar-col"><div class="week-bar-el" style="height:68%;background:#10B981;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">月</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:85%;background:#10B981;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">火</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:52%;background:#10B981;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">水</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:90%;background:#F59E0B;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">木</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:62%;background:#10B981;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">金</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:100%;background:#EF4444;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">土</div></div>
+        <div class="week-bar-col"><div class="week-bar-el" style="height:72%;background:#10B981;border-radius:5px 5px 0 0;"></div><div class="week-bar-day">日</div></div>
+      </div>
+      <div class="week-legend">
+        <div class="week-legend-item"><span class="week-legend-dot" style="background:#10B981;"></span>適正</div>
+        <div class="week-legend-item"><span class="week-legend-dot" style="background:#F59E0B;"></span>注意</div>
+        <div class="week-legend-item"><span class="week-legend-dot" style="background:#EF4444;"></span>過多</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT (GREEN) -->
+<section class="support-section" id="support">
+  <div class="section-inner">
+    <p class="section-tag">SUPPORT</p>
+    <h2 class="section-title">カーボカウントで、健康な毎日をサポート！</h2>
+    <p class="section-sub">糖尿病の食事療法「カーボカウント」から日常のダイエットまで幅広く対応</p>
+    <div class="support-cards">
+      <div class="support-card">
+        <div class="support-card-icon">🩺</div>
+        <h3>カーボカウント専門解説</h3>
+        <p>糖尿病の食事療法「カーボカウント」に対応。医療ニーズに応える専門コンテンツで、食事と血糖管理をサポートします。</p>
+      </div>
+      <div class="support-card">
+        <div class="support-card-icon">📱</div>
+        <h3>スマホ・PCフル対応</h3>
+        <p>外出先でもスマホから即座に計算。完全レスポンシブデザインでどんな端末でも快適に利用できます。</p>
+      </div>
+      <div class="support-card">
+        <div class="support-card-icon">🔒</div>
+        <h3>プライバシー完全保護</h3>
+        <p>入力データはすべてブラウザ内で処理。サーバーへの送信は一切なく、安心してご利用いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <p class="section-tag">FAQ</p>
+    <h2 class="section-title">よくある質問</h2>
+    <p class="section-sub">ご不明な点はこちらをご確認ください</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-mark">Q</span> 完全無料で使えますか？</p>
+        <p class="faq-a">はい、登録不要・完全無料でご利用いただけます。アカウント作成やクレジットカード登録は一切不要です。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-mark">Q</span> 食品の糖質データはどこから取得していますか？</p>
+        <p class="faq-a">日本食品標準成分表（文部科学省）のデータをもとに算出しています。参考値としてご利用ください。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-mark">Q</span> 1日の目標糖質量はどう設定しますか？</p>
+        <p class="faq-a">糖質制限レベル（ゆるい130g/標準100g/厳格50g）から選択するか、カスタム値を手動入力できます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-mark">Q</span> 入力したデータはサーバーに送信されますか？</p>
+        <p class="faq-a">いいえ。すべての計算はブラウザ内で処理され、データのサーバー送信は行いません。食事記録はお使いのブラウザにのみ保存されます。</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-q"><span class="faq-q-mark">Q</span> CSVエクスポートはどのように使いますか？</p>
+        <p class="faq-a">食事リストに食品を追加後、「CSVダウンロード」ボタンから食事記録をCSVファイルとして保存できます。Excelや他の管理ツールに取り込んで活用いただけます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>今日から、糖質・カーボ量管理を始めよう！</h2>
+  <p>食品名を検索してグラム数を入力するだけ。<br>無料で今すぐ始められます。</p>
+  <a href="/carb-calculator/" class="btn-green-lg" style="background:var(--amber);box-shadow:0 6px 20px rgba(245,158,11,.35);">
+    今すぐ計算する
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+  </a>
+  <div class="cta-badges">
+    <div class="cta-badge">✓ 登録不要</div>
+    <div class="cta-badge">✓ 完全無料</div>
+    <div class="cta-badge">✓ スマホ対応</div>
+    <div class="cta-badge">✓ データ送信なし</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="lp-footer">
+  <div class="lp-footer-links">
+    <a href="https://appadaycreator.com/">AppADayCreator</a>
+    <a href="/carb-calculator/">カーボ計算ツール</a>
+    <a href="/carb-calculator/privacy-policy.html">プライバシーポリシー</a>
+    <a href="/carb-calculator/terms.html">利用規約</a>
+    <a href="/carb-calculator/contact.html">お問い合わせ</a>
+  </div>
+  <p style="margin-top:4px;font-size:11px;">本サービスはアフィリエイト広告を掲載しています</p>
+  <p style="margin-top:6px;">© 2026 AppADayCreator. All rights reserved.</p>
+</footer>
+</body>
+</html>
